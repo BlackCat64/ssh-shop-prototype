@@ -4,6 +4,7 @@ import { BrowserRouter as Router,
   Route,
   Routes,
   Link} from "react-router-dom";
+import ItemCard from "./Components/ItemCard";
 //Basically main, used only to route pages
 function App() {
   return (
