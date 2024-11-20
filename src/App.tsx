@@ -31,9 +31,11 @@ function App() {
 //Dashboard function is like homepage, just use to have button to Shop
 const Dashboard = () => (
     <div>
-      <li>
-        <Link to="/shop">ShopHome</Link>
-      </li>
+        <ItemCard
+            title={"Ssh Shop"}
+            text={"Lorem Ipsum"}
+            link={"/shop"}
+        />
     </div>
 )
 
