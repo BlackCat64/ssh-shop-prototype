@@ -13,7 +13,7 @@ interface Props {
 //Element that stays at the top of the shop home page, likely all subsets of shop should have this element too.
 function NavBar({barName, barNameLink} : Props) {
     return (
-        <nav className="navbar navbar-expand-lg " style={{ backgroundColor: '#e3f2fd' }} data-bs-theme="light">
+        <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: '#e3f2fd' }} data-bs-theme="light">
             <div className="container-fluid">
                 <Link className="navbar-brand" to={barNameLink || '/'}>
                     <img src="/favicon.ico" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>

@@ -44,7 +44,7 @@ const Dashboard = () => (
 const ShopHome = () => (
     <div>
     <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
-        <CarouselAP imageOne="/Images/CameraFillerPhoto.jpg"/>
+        <CarouselAP imageOne="/Images/CameraFillerPhoto.jpg" imageTwo="/Images/Table.jpg" imageThree="Cloud.jpg"/>
       <ul>
         <li>
           <Link to="results">SearchResults</Link>

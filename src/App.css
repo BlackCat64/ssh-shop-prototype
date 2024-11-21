@@ -1,0 +1,10 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add padding to account for the fixed navbar height */
+body {
+    padding-top: 56px; /* Adjust based on the navbar height */
+}
