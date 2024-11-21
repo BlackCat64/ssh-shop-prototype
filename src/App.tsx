@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import NavBar from './Components/NavBar'
 import { BrowserRouter as Router,
   Route,
   Routes,
@@ -39,7 +40,7 @@ const Dashboard = () => (
 //Main page for us, will be adding items search bar etc
 const ShopHome = () => (
     <div>
-      <h2>Shop Home</h2>
+    <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
       <ul>
         <li>
           <Link to="results">SearchResults</Link>
