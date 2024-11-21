@@ -4,6 +4,7 @@ import { BrowserRouter as Router,
   Route,
   Routes,
   Link} from "react-router-dom";
+import FilterSelect from './Components/FilterSelect';
 //Basically main, used only to route pages
 function App() {
   return (
@@ -57,7 +58,7 @@ const ShopHome = () => (
 //variable page that changes based on searches
 const SearchResults = () => (
     <div>
-
+        <FilterSelect/>
     </div>
 )
 
