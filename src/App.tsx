@@ -58,7 +58,8 @@ const ShopHome = () => (
 //variable page that changes based on searches
 const SearchResults = () => (
     <div>
-
+        <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
+        <button>Hello</button>
     </div>
 )
 
