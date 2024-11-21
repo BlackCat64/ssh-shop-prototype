@@ -1,21 +1,25 @@
 import React from 'react';
 
 interface Props{
-    imageOne: string
-    imageTwo: string
+    imageOne?: string
+    imageOneAlt?: string
+    imageTwo?: string
+    imageTwoAlt?: string
+    imageThree?: string
+    imageThreeAlt?: string
 }
-function CarouselAp() {
+function CarouselAp({imageOne, imageOneAlt, imageTwo, imageTwoAlt, imageThree, imageThreeAlt} : Props) {
     return (
-        <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner">
+        <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel" aria-atomic="true" style={{ height: "400px" }}>
+            <div className="carousel-inner" style={{position: "absolute", inset: "-22.5px", margin: "1.5%"}}>
                 <div className="carousel-item active">
-                    <img src="..." className="d-block w-100" alt="..."/>
+                    <img src={imageOne} className="d-block w-100" alt={imageOneAlt}/>
                 </div>
                 <div className="carousel-item">
-                    <img src="..." className="d-block w-100" alt="..."/>
+                    <img src={imageTwo} className="d-block w-100" alt={imageTwoAlt}/>
                 </div>
                 <div className="carousel-item">
-                    <img src="..." className="d-block w-100" alt="..."/>
+                    <img src={imageThree} className="d-block w-100" alt={imageThreeAlt}/>
                 </div>
             </div>
         </div>

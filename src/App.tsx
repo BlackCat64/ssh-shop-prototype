@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
 import NavBar from './Components/NavBar'
+import  CarouselAP from './Components/CarouselAP'
 import { BrowserRouter as Router,
   Route,
   Routes,
   Link} from "react-router-dom";
+
+
 //Basically main, used only to route pages
 function App() {
   return (
@@ -41,6 +44,7 @@ const Dashboard = () => (
 const ShopHome = () => (
     <div>
     <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
+        <CarouselAP imageOne="/Images/CameraFillerPhoto.jpg"/>
       <ul>
         <li>
           <Link to="results">SearchResults</Link>
