@@ -16,9 +16,9 @@ function App() {
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/shop" element={<ShopHome/>}/>
             {/*Nested routes, basically everything stored in ShopHome*/}
-            <Route path="results" element={<SearchResults/>}/>
-            <Route path="basket" element={<Basket />}/>
-            <Route path="checkout" element={<Checkout />}/>
+            <Route path="/shop/results" element={<SearchResults/>}/>
+            <Route path="/shop/basket" element={<Basket />}/>
+            <Route path="/shop/checkout" element={<Checkout />}/>
           </Routes>
         </div>
 
