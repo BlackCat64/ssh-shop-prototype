@@ -32,20 +32,20 @@ const PriceRangeSelector: React.FC = () => {
 
             <table>
                 <tr>
-                        <td>
-                        <label htmlFor="minPrice">Min:</label>
-                        </td>
-                        <td>
-                        <input
-                            type="number"
-                            id="minPrice"
-                            value={minPrice}
-                            min="0"
-                            max="500"
-                            step="5"
-                            onChange={handleMinPriceChange}
-                        />
-                        </td>
+                    <td>
+                    <label htmlFor="minPrice">Min:</label>
+                    </td>
+                    <td>
+                    <input
+                        type="number"
+                        id="minPrice"
+                        value={minPrice}
+                        min="0"
+                        max="500"
+                        step="5"
+                        onChange={handleMinPriceChange}
+                    />
+                    </td>
                 </tr>
 
                 <tr>
