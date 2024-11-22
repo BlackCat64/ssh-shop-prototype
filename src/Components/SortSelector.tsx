@@ -19,6 +19,10 @@ const SortSelect: React.FC = () => {
 
     return (
         <div className="sortSelect">
+            <div className="optionTitle">
+                <label>Sort</label>
+            </div>
+
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {sortOptions[sortType]}  {/* Display the mapped sort option */}

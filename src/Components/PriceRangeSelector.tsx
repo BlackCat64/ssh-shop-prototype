@@ -37,6 +37,7 @@ const PriceRangeSelector: React.FC = () => {
                     </td>
                     <td>
                     <input
+                        className="priceInput"
                         type="number"
                         id="minPrice"
                         value={minPrice}
@@ -54,6 +55,7 @@ const PriceRangeSelector: React.FC = () => {
                     </td>
                     <td>
                     <input
+                        className="priceInput"
                         type="number"
                         id="maxPrice"
                         value={maxPrice}

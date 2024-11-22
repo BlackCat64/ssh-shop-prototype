@@ -5,7 +5,9 @@ import SortSelector from './SortSelector'
 function FilterSelect() {
     return (
         <div className="filterSelect">
-            <label className="title">Filters</label>
+            <div className="title">
+                <label>Filters</label>
+            </div>
             <br></br>
             <PriceRangeSelector/>
             <SortSelector/>
