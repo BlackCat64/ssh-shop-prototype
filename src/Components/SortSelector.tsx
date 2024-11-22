@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 
 const SortSelect: React.FC = () => {
+    const sortOptions: Record<string, string> = { // store all possible sort types in a mapping object
+        'alphabetical': "Name: A - Z",
+        'alphabetical-reverse': "Name: Z - A",
+        'price': "Price: Low to High",
+        'price-reverse': "Price: High to Low",
+    };
+
     // State to store the selected sort type
-    const [sortType, setSortType] = useState('');
+    const [sortType, setSortType] = useState<string>('alphabetical');
 
     const handleSortChange = (type: string) => {
         setSortType(type); // Update the sort type
@@ -14,21 +21,19 @@ const SortSelect: React.FC = () => {
         <div className="sortSelect">
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Sort
+                    {sortOptions[sortType]}  {/* Display the mapped sort option */}
                 </button>
                 <ul className="dropdown-menu">
-                    <li><button className="dropdown-item" onClick={() => handleSortChange("alphabetical")}>
-                        Name: A - Z
-                    </button></li>
-                    <li><button className="dropdown-item" onClick={() => handleSortChange("alphabetical-reverse")}>
-                        Name: Z - A
-                    </button></li>
-                    <li><button className="dropdown-item" onClick={() => handleSortChange("price")}>
-                        Price: Low to High
-                    </button></li>
-                    <li><button className="dropdown-item" onClick={() => handleSortChange("price-reverse")}>
-                        Price: High to Low
-                    </button></li>
+                    {Object.keys(sortOptions).map((type) => (
+                        <li key={type}>
+                            <button
+                                className="dropdown-item"
+                                onClick={() => handleSortChange(type)}
+                            >
+                                {sortOptions[type]}  {/* Display the corresponding display name */}
+                            </button>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
