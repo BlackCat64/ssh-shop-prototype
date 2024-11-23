@@ -16,11 +16,18 @@ const FilterSelect: React.FC = () => {
 
     return (
         <div className="dropdown">
-            <button type="button" className="filtersDropdown btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded={dropdownOpen ? "true" : "false"}
-                    onClick={toggleDropdown}>
+            <button
+                type="button"
+                className={`filtersDropdown btn btn-primary dropdown-toggle ${dropdownOpen ? "open" : ""}`}
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="false"  // Disable auto-close behavior for the dropdown
+                aria-expanded={dropdownOpen ? "true" : "false"}
+                onClick={toggleDropdown}  // Toggle dropdown open/close
+            >
                 Filters
             </button>
-            <form className="filtersMenu dropdown-menu p-4" aria-labelledby="filtersDropdown">
+
+            <form className={`filtersMenu dropdown-menu p-4 ${dropdownOpen ? "show" : ""}`}>
                 <div className="filterSelect">
                     <table className="filterOptionsLayout">
                         <th>
@@ -30,7 +37,7 @@ const FilterSelect: React.FC = () => {
                             <SortSelector/>
                         </th>
                     </table>
-                    <button className="btn btn-primary" type="button" onClick={handleSearchClick}>Search</button>
+                    <button className="btn btn-primary" type="submit" onClick={handleSearchClick}>Search</button>
                 </div>
             </form>
         </div>

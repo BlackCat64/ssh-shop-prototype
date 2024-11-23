@@ -13,7 +13,6 @@ const SortSelect: React.FC = () => {
 
     const handleSortChange = (type: string) => {
         setSortType(type);
-        console.log("Selected Sort Type: ", type);
     };
 
     return (
@@ -23,7 +22,12 @@ const SortSelect: React.FC = () => {
             </div>
 
             <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button
+                    className="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
                     {sortOptions[sortType]}
                 </button>
                 <ul className="dropdown-menu">
@@ -31,6 +35,7 @@ const SortSelect: React.FC = () => {
                         <li key={type}>
                             <button
                                 className="dropdown-item"
+                                type="button"
                                 onClick={() => handleSortChange(type)}
                             >
                                 {sortOptions[type]}
