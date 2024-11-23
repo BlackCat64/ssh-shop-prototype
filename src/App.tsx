@@ -7,8 +7,6 @@ import { BrowserRouter as Router,
 
 import FilterSelect from './Components/FilterSelect';
 
-import { Outlet } from 'react-router-dom';
-
 //Basically main, used only to route pages
 function App() {
   return (
@@ -63,6 +61,7 @@ const ShopHome = () => (
 const SearchResults = () => (
     <div>
         <FilterSelect/>
+        <button>Hello</button>
     </div>
 );
 
