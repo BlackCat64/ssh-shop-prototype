@@ -7,6 +7,8 @@ import { BrowserRouter as Router,
 
 import FilterSelect from './Components/FilterSelect';
 
+import { Outlet } from 'react-router-dom';
+
 //Basically main, used only to route pages
 function App() {
   return (
@@ -17,9 +19,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/shop" element={<ShopHome/>}/>
-            <Route path="results" element={<SearchResults/>}/>
-            <Route path="basket" element={<Basket />}/>
-            <Route path="checkout" element={<Checkout />}/>
+            <Route path="/shop/results" element={<SearchResults/>}/>
+            <Route path="/shop/basket" element={<Basket />}/>
+            <Route path="/shop/checkout" element={<Checkout />}/>
+            <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </div>
 
@@ -36,7 +39,7 @@ const Dashboard = () => (
         <Link to="/shop">ShopHome</Link>
       </li>
     </div>
-)
+);
 
 //Main page for us, will be adding items search bar etc
 const ShopHome = () => (
@@ -54,26 +57,26 @@ const ShopHome = () => (
         </li>
       </ul>
     </div>
-)
+);
 
 //variable page that changes based on searches
 const SearchResults = () => (
     <div>
         <FilterSelect/>
     </div>
-)
+);
 
 //just displays items added to basket, and price(?)
 const Basket = () => (
     <div>
 
     </div>
-)
+);
 
 //pretend to get user information and display price
 const Checkout = () => (
     <div>
 
     </div>
-)
+);
 export default App;
