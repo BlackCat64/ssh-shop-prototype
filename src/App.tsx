@@ -4,7 +4,9 @@ import { BrowserRouter as Router,
   Route,
   Routes,
   Link} from "react-router-dom";
+
 import FilterSelect from './Components/FilterSelect';
+
 //Basically main, used only to route pages
 function App() {
   return (
@@ -15,10 +17,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/shop" element={<ShopHome/>}/>
-            {/*Nested routes, basically everything stored in ShopHome*/}
-            <Route path="/shop/results" element={<SearchResults/>}/>
-            <Route path="/shop/basket" element={<Basket />}/>
-            <Route path="/shop/checkout" element={<Checkout />}/>
+            <Route path="results" element={<SearchResults/>}/>
+            <Route path="basket" element={<Basket />}/>
+            <Route path="checkout" element={<Checkout />}/>
           </Routes>
         </div>
 
