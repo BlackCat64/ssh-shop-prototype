@@ -4,7 +4,11 @@ import { BrowserRouter as Router,
   Route,
   Routes,
   Link} from "react-router-dom";
+
+import FilterSelect from './Components/FilterSelect';
+
 import { Outlet } from 'react-router-dom';
+
 //Basically main, used only to route pages
 function App() {
   return (
@@ -15,9 +19,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/shop" element={<ShopHome/>}/>
-            <Route path="shop/results" element={<SearchResults/>}/>
-            <Route path="shop/basket" element={<Basket />}/>
-            <Route path="shop/checkout" element={<Checkout />}/>
+            <Route path="/shop/results" element={<SearchResults/>}/>
+            <Route path="/shop/basket" element={<Basket />}/>
+            <Route path="/shop/checkout" element={<Checkout />}/>
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </div>
@@ -58,7 +62,7 @@ const ShopHome = () => (
 //variable page that changes based on searches
 const SearchResults = () => (
     <div>
-        <button>Hello</button>
+        <FilterSelect/>
     </div>
 );
 
