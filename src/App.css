@@ -1,4 +1,4 @@
-* {
+body * {
     font-family: Arial, serif;
 }
 
@@ -55,10 +55,6 @@
     margin: 0 auto;
     table-layout: fixed;
     border-collapse: collapse;
-
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: flex-start;*/
 }
 .filterOptionsLayout th {
     width: 50%;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import { BrowserRouter as Router,
   Route,
@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/shop" element={<ShopHome/>}/>
-            <Route path="/shop/results" element={<SearchResults/>}/>
+            <Route path="/shop/results" element={<SearchResults query={"null"}/>}/>
             <Route path="/shop/basket" element={<Basket />}/>
             <Route path="/shop/checkout" element={<Checkout />}/>
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
@@ -28,8 +28,6 @@ function App() {
       </Router>
   );
 }
-
-//work on pages in their respective functions
 
 //Dashboard function is like homepage, just use to have button to Shop
 const Dashboard = () => (
@@ -60,13 +58,38 @@ const ShopHome = () => (
     </div>
 );
 
+interface SearchResultsProps {
+    query: string;
+}
+
 //variable page that changes based on searches
-const SearchResults = () => (
-    <div>
-        <FilterSelect/>
-        <button>Hello</button>
-    </div>
-);
+const SearchResults = ({ query } : SearchResultsProps) => {
+    const [sortType, setSortType] = useState<string>("alphabetical"); // default to sort by alphabetical order
+    const [minPrice, setMinPrice] = useState<number>(0);
+    const [maxPrice, setMaxPrice] = useState<number>(500);
+
+
+    // use this code for searching in the list of items, when we have it
+    // const results = mockData.filter(item =>
+    //     item.toLowerCase().includes(searchQuery.toLowerCase())
+    // );
+
+    return (<div>
+        <FilterSelect
+            sortType={sortType}
+            setSortType={setSortType}
+            minPrice={minPrice}
+            setMinPrice={setMinPrice}
+            maxPrice={maxPrice}
+            setMaxPrice={setMaxPrice}
+        />
+        <div className={"searchResults"}>
+            <p>Showing results for: <strong>{query}</strong></p>
+            <p>Sorted by: <strong>{sortType}</strong></p>
+            <p>Price Range: <strong>£{minPrice} - £{maxPrice}</strong></p>
+        </div>
+    </div>);
+};
 
 //just displays items added to basket, and price(?)
 const Basket = () => (

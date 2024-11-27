@@ -2,7 +2,23 @@ import React, {useState} from 'react';
 import PriceRangeSelector from './PriceRangeSelector'
 import SortSelector from './SortSelector'
 
-const FilterSelect: React.FC = () => {
+interface FilterSelectProps {
+    sortType: string;
+    setSortType: (value: string) => void;
+    minPrice: number;
+    setMinPrice: (value: number) => void;
+    maxPrice: number;
+    setMaxPrice: (value: number) => void;
+}
+
+const FilterSelect: React.FC<FilterSelectProps> = ({
+                                                       sortType,
+                                                       setSortType,
+                                                       minPrice,
+                                                       setMinPrice,
+                                                       maxPrice,
+                                                       setMaxPrice
+                                                   }) => {
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
     const toggleDropdown = () => {
@@ -31,10 +47,15 @@ const FilterSelect: React.FC = () => {
                 <div className="filterSelect">
                     <table className="filterOptionsLayout">
                         <th>
-                            <PriceRangeSelector/>
+                            <PriceRangeSelector
+                                minPrice={minPrice}
+                                setMinPrice={setMinPrice}
+                                maxPrice={maxPrice}
+                                setMaxPrice={setMaxPrice}
+                            />
                         </th>
                         <th>
-                            <SortSelector/>
+                            <SortSelector sortType={sortType} setSortType={setSortType} />
                         </th>
                     </table>
                     <button className="btn btn-primary" type="submit" onClick={handleSearchClick}>Search</button>
