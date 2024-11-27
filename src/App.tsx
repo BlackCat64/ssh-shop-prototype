@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './App.css';
 import NavBar from './Components/NavBar'
 import  CarouselAP from './Components/CarouselAP'
+import CardsHolder from './Components/CardsHolder'
+import Item from './Components/Item'
 import { BrowserRouter as Router,
   Route,
   Routes,
@@ -10,6 +12,9 @@ import { BrowserRouter as Router,
 import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
+
+
+ var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
 
 //Basically main, used only to route pages
 function App() {
@@ -38,7 +43,7 @@ const Dashboard = () => (
         <ItemCard
             title={"Ssh Shop"}
             text={"Lorem Ipsum"}
-            link={"/shop"}
+            item={<Item link="/shop"/>}
         />
     </div>
 );
@@ -48,6 +53,9 @@ const ShopHome = () => (
     <div>
     <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
     <CarouselAP imageOne="/Images/CameraFillerPhoto.jpg" imageTwo="/Images/Table.jpg" imageThree="Cloud.jpg"/>
+        <div>
+            <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test}/>
+        </div>
         <ul>
         <li>
           <Link to="results">SearchResults</Link>
