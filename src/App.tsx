@@ -90,8 +90,14 @@ const SearchResults = ({ query } : SearchResultsProps) => {
             <ProductDisplay
                 name={"Test"}
                 desc={"A very cool product"}
-                img={"https://cdn.discordapp.com/attachments/1272529512038400001/1311302412580945930/1311302205646831688remix-1732709255543.png?ex=67485d09&is=67470b89&hm=98d878d067abfba021e31bd0ca17d8d59f2c0add82e6f8d7a26d79f72b82fe91&"}
+                img={"https://media.discordapp.net/attachments/993444254447849523/1119610408504918026/853891953372168223.gif?ex=6747beb2&is=67466d32&hm=e9bdb151143b83d1d5822569cd28d89a4ee1286591c1d7fd38e65fc247b6f700&"}
                 id={"69"}
+            />
+            <ProductDisplay
+                name={"Test 2"}
+                desc={"Another very cool product"}
+                img={"https://cdn.discordapp.com/attachments/1246915842340556921/1311012156682272918/image.png?ex=6747f777&is=6746a5f7&hm=55f3ba8f0dd4383bb6ad03ede1d0df06dac09783e65ed606a37aa165d1b819c2&"}
+                id={"420"}
             />
         </div>
     </div>);
