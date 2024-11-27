@@ -9,6 +9,8 @@ interface Props{
     link? : string;
     text? : string;
 }
+
+//used to genertate reusable item components as opposued to making the same things over and over
 const Item = ({imgSrc,imgAlt,imgSize= "100px",link, text} : Props) => {
     return (
         <div >

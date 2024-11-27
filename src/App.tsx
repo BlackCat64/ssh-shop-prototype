@@ -53,8 +53,58 @@ const ShopHome = () => (
     <div>
     <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
     <CarouselAP imageOne="/Images/CameraFillerPhoto.jpg" imageTwo="/Images/Table.jpg" imageThree="Cloud.jpg"/>
-        <div>
-            <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test}/>
+        <div
+            style={{
+                padding: "20px",
+                display: "flex",
+                flexDirection: "column",
+                background: "linear-gradient(aliceblue, lightgrey)",
+
+            }}
+        >
+            <div
+                style={{
+                    padding: "20px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                }}
+            >
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+            </div>
+
+            <div
+                style={{
+                    padding: "20px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap", // Ensure that items wrap into a new row if necessary
+                }}
+            >
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+            </div>
         </div>
         <ul>
         <li>
