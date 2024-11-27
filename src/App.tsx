@@ -117,6 +117,12 @@ const ShopHome = () => (
           <Link to="checkout">Checkout</Link>
         </li>
       </ul>
+        <div style={{width:"100%", backgroundColor:"#d1e3f0", display:"flex", height:"100px"}}>
+        </div>
+        <div style={{width:"100%", backgroundColor:"#c1d8e8", display:"flex", height:"500px"}}>
+        </div>
+        <div style={{width:"100%", backgroundColor:"#9dbcd1", display:"flex", height:"250px"}}>
+        </div>
     </div>
 );
 
