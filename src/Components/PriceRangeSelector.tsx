@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const PriceRangeSelector: React.FC = () => {
-    // State to hold min and max price values
-    const [minPrice, setMinPrice] = useState<number>(0);
-    const [maxPrice, setMaxPrice] = useState<number>(500);
+interface PriceRangeSelectorProps {
+    minPrice: number;
+    setMinPrice: (value: number) => void;
+    maxPrice: number;
+    setMaxPrice: (value: number) => void;
+}
+
+const PriceRangeSelector: React.FC<PriceRangeSelectorProps> = ({
+                                          minPrice,
+                                          setMinPrice,
+                                          maxPrice,
+                                          setMaxPrice
+                                      }) => {
 
     // Handlers to update state and enforce constraints
     const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {

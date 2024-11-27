@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const SortSelect: React.FC = () => {
+interface SortSelectorProps {
+    sortType: string;
+    setSortType: (value: string) => void;
+}
+
+const SortSelect: React.FC<SortSelectorProps> = ({ sortType, setSortType }) => {
     const sortOptions: Record<string, string> = { // store all possible sort types in a mapping object
         'alphabetical': "Name: A - Z",
         'alphabetical-reverse': "Name: Z - A",
         'price': "Price: Low to High",
         'price-reverse': "Price: High to Low",
     };
-
-    // State to store the selected sort type
-    const [sortType, setSortType] = useState<string>('alphabetical');
 
     const handleSortChange = (type: string) => {
         setSortType(type);
