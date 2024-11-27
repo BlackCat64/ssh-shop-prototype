@@ -2,7 +2,7 @@ body * {
     font-family: Arial, serif;
 }
 
-.filtersDropdown, .filtersDropdown:hover, .filtersDropdown:focus, .filtersDropdown:active {
+.searchResults .filtersDropdown, .filtersDropdown:hover, .filtersDropdown:focus, .filtersDropdown:active {
     background-color: lightblue;
     border-radius: 15px;
     border: 2px darkgray solid;
@@ -23,11 +23,11 @@ body * {
     align-items: flex-start;
 }
 
-.filtersDropdown.open {
+.searchResults .filtersDropdown.open {
     height: 240px;
 }
 
-.filtersMenu {
+.searchResults .filtersMenu {
     background-color: transparent;
     border: 0;
     text-align: left;
@@ -37,36 +37,36 @@ body * {
     margin-right: 33%;
 }
 
-.filtersMenu button {
+.searchResults .filtersMenu button {
     padding: 5px 10px 5px 10px;
 }
 
-.filterSelect * {
+.searchResults .filterSelect * {
     padding: 2px;
 }
-.filterSelect {
+.searchResults .filterSelect {
     font-weight: bold;
     text-align: center;
     margin: 5px;
 }
 
-.filterOptionsLayout {
+.searchResults .filterOptionsLayout {
     width: 90%;
     margin: 0 auto;
     table-layout: fixed;
     border-collapse: collapse;
 }
-.filterOptionsLayout th {
+.searchResults .filterOptionsLayout th {
     width: 50%;
     padding: 0 20px 5px 20px;
 }
 
-.priceRange .priceInput {
+.searchResults .priceRange .priceInput {
     border: 2px teal solid;
     border-radius: 5px;
 }
 
-.sortSelect .dropdown-toggle {
+.searchResults .sortSelect .dropdown-toggle {
     width: 200px;
     background-color: white;
     color: black;

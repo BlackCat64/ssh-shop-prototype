@@ -74,7 +74,7 @@ const SearchResults = ({ query } : SearchResultsProps) => {
     //     item.toLowerCase().includes(searchQuery.toLowerCase())
     // );
 
-    return (<div>
+    return (<div className={"searchResults"}>
         <FilterSelect
             sortType={sortType}
             setSortType={setSortType}
@@ -83,7 +83,7 @@ const SearchResults = ({ query } : SearchResultsProps) => {
             maxPrice={maxPrice}
             setMaxPrice={setMaxPrice}
         />
-        <div className={"searchResults"}>
+        <div className={"resultsDisplay"}>
             <p>Showing results for: <strong>{query}</strong></p>
             <p>Sorted by: <strong>{sortType}</strong></p>
             <p>Price Range: <strong>£{minPrice} - £{maxPrice}</strong></p>
