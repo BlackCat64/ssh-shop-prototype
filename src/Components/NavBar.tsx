@@ -13,7 +13,8 @@ interface Props {
 //Element that stays at the top of the shop home page, likely all subsets of shop should have this element too.
 function NavBar({barName, barNameLink} : Props) {
     return (
-        <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: '#e3f2fd' }} data-bs-theme="light">
+        <>
+        <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: '#c1d8e8' }} data-bs-theme="light">
             <div className="container-fluid">
                 <Link className="navbar-brand" to={barNameLink || '/'}>
                     <img src="/favicon.ico" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
@@ -47,6 +48,28 @@ function NavBar({barName, barNameLink} : Props) {
                 </div>
             </div>
         </nav>
+            {/* pagebar, put under navbar as would be a redundant component*/}
+            <ul className="nav nav-pills nav-fill"   style={{
+                backgroundColor: "#d1e3f0", marginTop: "35px", padding: 20
+            }}>
+                <li className="nav-item dropdown left">
+                    <button className="nav-link">Dropdown</button>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" aria-current="page" href="#">Active</a>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="*">
+                            Link
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="*">
+                             Disabled
+                    </Link>
+                </li>
+            </ul>
+    </>
     );
 }
 
