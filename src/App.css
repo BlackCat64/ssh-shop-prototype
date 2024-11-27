@@ -72,3 +72,7 @@ body * {
     color: black;
     border: 2px teal solid;
 }
+
+.searchResults .resultsDisplay {
+    margin-left: 33%;
+}
