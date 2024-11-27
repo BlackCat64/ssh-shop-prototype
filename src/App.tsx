@@ -5,8 +5,8 @@ import { BrowserRouter as Router,
   Routes,
   Link} from "react-router-dom";
 import ItemCard from "./Components/ItemCard";
-
 import FilterSelect from './Components/FilterSelect';
+import ProductDisplay from './Components/ProductDisplay';
 
 //Basically main, used only to route pages
 function App() {
@@ -87,6 +87,12 @@ const SearchResults = ({ query } : SearchResultsProps) => {
             <p>Showing results for: <strong>{query}</strong></p>
             <p>Sorted by: <strong>{sortType}</strong></p>
             <p>Price Range: <strong>£{minPrice} - £{maxPrice}</strong></p>
+            <ProductDisplay
+                name={"Test"}
+                desc={"A very cool product"}
+                img={"https://cdn.discordapp.com/attachments/1272529512038400001/1311302412580945930/1311302205646831688remix-1732709255543.png?ex=67485d09&is=67470b89&hm=98d878d067abfba021e31bd0ca17d8d59f2c0add82e6f8d7a26d79f72b82fe91&"}
+                id={"69"}
+            />
         </div>
     </div>);
 };

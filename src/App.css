@@ -76,3 +76,6 @@ body * {
 .searchResults .resultsDisplay {
     margin-left: 33%;
 }
+.searchResults .productDisplay {
+    width: 50%;
+}
