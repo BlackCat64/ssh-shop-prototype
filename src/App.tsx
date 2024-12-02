@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import './Components/TextBox'
 import { BrowserRouter as Router,
   Route,
   Routes,
@@ -7,6 +8,7 @@ import { BrowserRouter as Router,
 import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
+import TextBox from "./Components/TextBox";
 
 //Basically main, used only to route pages
 function App() {
@@ -115,7 +117,17 @@ const Basket = () => (
 //pretend to get user information and display price
 const Checkout = () => (
     <div>
+        <h2>Checkout</h2>
+        <form>
+            <TextBox text="First Name:"/>
+            <TextBox text="Last Name:"/>
+            <TextBox text="Street Address:"/>
+            <TextBox/>
+            <TextBox text="First Name:" isButton={true}/>
+            <TextBox text="First Name:" isButton={true}/>
+            <TextBox text="First Name:" isButton={true}/>
 
+        </form>
     </div>
 );
 export default App;
