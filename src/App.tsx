@@ -87,9 +87,10 @@ const ShopHome = () => (
             <div
                 style={{
                     padding: "20px",
+                    paddingBottom: "30px",
                     display: "flex",
                     justifyContent: "space-between",
-                    flexWrap: "wrap", // Ensure that items wrap into a new row if necessary
+                    flexWrap: "wrap",
                 }}
             >
                 <div style={{ flex: "1 0 20%", padding: "10px" }}>
@@ -106,17 +107,50 @@ const ShopHome = () => (
                 </div>
             </div>
         </div>
-        <ul>
-        <li>
-          <Link to="results">SearchResults</Link>
-        </li>
-        <li>
-          <Link to="basket">Basket</Link>
-        </li>
-        <li>
-          <Link to="checkout">Checkout</Link>
-        </li>
-      </ul>
+        <div
+            style={{
+                padding: "20px",
+                display: "flex",
+                justifyContent: "space-between",
+                flexWrap: "wrap",
+                backgroundColor: "lightgrey"
+            }}
+        >
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+        </div>
+        <div
+            style={{
+                padding: "20px",
+                display: "flex",
+                justifyContent: "space-between",
+                flexWrap: "wrap",
+                background: "linear-gradient(lightgrey, aliceblue)"
+            }}
+        >
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+        </div>
         <div style={{width:"100%", backgroundColor:"#d1e3f0", display:"flex", height:"100px"}}>
         </div>
         <div style={{width:"100%", backgroundColor:"#c1d8e8", display:"flex", height:"500px"}}>
