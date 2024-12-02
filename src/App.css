@@ -1,4 +1,12 @@
-body * {
+.html .body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add padding to account for the fixed navbar height */
+.body {
+    padding-top: 56px; /* Adjust based on the navbar height */
     font-family: Arial, serif;
 }
 
@@ -37,7 +45,7 @@ body * {
     margin-right: 33%;
 }
 
-.searchResults .filtersMenu button {
+.searchResults .filtersMenu .button {
     padding: 5px 10px 5px 10px;
 }
 

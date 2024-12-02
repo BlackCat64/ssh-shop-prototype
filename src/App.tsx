@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
 import './App.css';
+import NavBar from './Components/NavBar'
+import  CarouselAP from './Components/CarouselAP'
+import CardsHolder from './Components/CardsHolder'
+import Item from './Components/Item'
 import { BrowserRouter as Router,
   Route,
   Routes,
   Link} from "react-router-dom";
+
 import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
+
+
+ var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
 
 //Basically main, used only to route pages
 function App() {
@@ -35,7 +43,7 @@ const Dashboard = () => (
         <ItemCard
             title={"Ssh Shop"}
             text={"Lorem Ipsum"}
-            link={"/shop"}
+            item={<Item link="/shop"/>}
         />
     </div>
 );
@@ -43,18 +51,112 @@ const Dashboard = () => (
 //Main page for us, will be adding items search bar etc
 const ShopHome = () => (
     <div>
-      <h2>Shop Home</h2>
-      <ul>
-        <li>
-          <Link to="results">SearchResults</Link>
-        </li>
-        <li>
-          <Link to="basket">Basket</Link>
-        </li>
-        <li>
-          <Link to="checkout">Checkout</Link>
-        </li>
-      </ul>
+    <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
+    <CarouselAP imageOne="/Images/CameraFillerPhoto.jpg" imageTwo="/Images/Table.jpg" imageThree="Cloud.jpg"/>
+        <div
+            style={{
+                padding: "20px",
+                display: "flex",
+                flexDirection: "column",
+                background: "linear-gradient(aliceblue, lightgrey)",
+
+            }}
+        >
+            <div
+                style={{
+                    padding: "20px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                }}
+            >
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+            </div>
+
+            <div
+                style={{
+                    padding: "20px",
+                    paddingBottom: "30px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                }}
+            >
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+                <div style={{ flex: "1 0 20%", padding: "10px" }}>
+                    <CardsHolder cardOne={test} cardTwo={test} cardThree={test} cardFour={test} />
+                </div>
+            </div>
+        </div>
+        <div
+            style={{
+                padding: "20px",
+                display: "flex",
+                justifyContent: "space-between",
+                flexWrap: "wrap",
+                backgroundColor: "lightgrey"
+            }}
+        >
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+        </div>
+        <div
+            style={{
+                padding: "20px",
+                display: "flex",
+                justifyContent: "space-between",
+                flexWrap: "wrap",
+                background: "linear-gradient(lightgrey, aliceblue)"
+            }}
+        >
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+            <div style={{ flex: "1 0 20%", padding: "5px" }}>
+                <ItemCard item={test} text="£299" />
+            </div>
+        </div>
+        <div style={{width:"100%", backgroundColor:"#d1e3f0", display:"flex", height:"100px"}}>
+        </div>
+        <div style={{width:"100%", backgroundColor:"#c1d8e8", display:"flex", height:"500px"}}>
+        </div>
+        <div style={{width:"100%", backgroundColor:"#9dbcd1", display:"flex", height:"250px"}}>
+        </div>
     </div>
 );
 
@@ -63,6 +165,7 @@ interface SearchResultsProps {
 }
 
 //variable page that changes based on searches
+
 const SearchResults = ({ query } : SearchResultsProps) => {
     const [sortType, setSortType] = useState<string>("alphabetical"); // default to sort by alphabetical order
     const [minPrice, setMinPrice] = useState<number>(0);
