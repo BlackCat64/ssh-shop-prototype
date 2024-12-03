@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router,
     Route,
     Routes,
-    Link} from "react-router-dom";
+    Link,
+    useNavigate} from "react-router-dom";
 
 //Props make things reactable, as this is in every shop element could be seen as redundant
 interface Props {
@@ -12,6 +13,17 @@ interface Props {
 
 //Element that stays at the top of the shop home page, likely all subsets of shop should have this element too.
 function NavBar({barName, barNameLink} : Props) {
+    const navigate = useNavigate();
+
+    const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        const query = formData.get('search')?.toString() || '';
+        if (query.trim()) {
+            navigate(`/shop/results?query=${encodeURIComponent(query)}`);
+        }
+    };
+
     return (
         <>
         <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: '#c1d8e8' }} data-bs-theme="light">
@@ -29,8 +41,20 @@ function NavBar({barName, barNameLink} : Props) {
                             <Link className="nav-link active" aria-current="page" to='/'>Dashboard</Link>
                         </li>
                     </ul>
-                    <form className="d-flex mx-auto" style={{ flex: '1 1 auto', maxWidth: '600px' }} role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" style={{ width: '100%' }}/>
+                    <form
+                        className="d-flex mx-auto"
+                        style={{ flex: '1 1 auto', maxWidth: '600px' }}
+                        role="search"
+                        onSubmit={handleSearch} // Use the custom handler
+                    >
+                        <input
+                            className="form-control me-2"
+                            type="search"
+                            name="search"
+                            placeholder="Find any SSH Product"
+                            aria-label="Search"
+                            style={{ width: '100%' }}
+                        />
                         <button className="btn btn-outline-success" type="submit">
                             Search
                         </button>
