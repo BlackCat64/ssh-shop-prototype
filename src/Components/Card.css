@@ -1,0 +1,69 @@
+body{
+    margin-top: -16px;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.dashboard {
+    display: flex;         /* Use flexbox to center horizontally */
+    justify-content: center; /* Centers content horizontally */
+    background-image: url("resources/Backgrounds/SSHbg.png");
+    margin: 0; /* Remove default margins */
+    height: 50%; /* Make both html and body span the full viewport height */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: repeat; /* Avoid repeating the image */
+    padding-bottom: 150px;
+}
+
+.card-container {
+    display: flex;             /* Enables flexbox layout */
+    flex-wrap: wrap;           /* Ensures wrapping */
+    justify-content: center;   /* Centers the cards horizontally */
+    align-items: flex-start;
+    gap: 1rem;                 /* Adds space between cards */
+    background-color: lightblue; /* White background with transparency */
+    padding: 20px; /* Add some spacing inside */
+    border-radius: 10px; /* Rounded corners */
+    width: 80%; /* Adjust width as needed */
+    margin: 50px auto; /* Center horizontally and add space at the top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for elevation */
+}
+
+.card {
+    width: 18rem; /* Fixed width */
+    height: 12rem; /* Fixed height to stop resizing */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents content from spilling out */
+}
+.card-title{
+    background-color: lightblue;
+    display: inline-block;
+    padding: 8px 5px;
+    border-radius: 15px;
+}
+.card-text {
+    font-size: 0.9rem; /* Fixed font size */
+    line-height: 1.4;
+    overflow: hidden; /* Prevents text overflow */
+    text-overflow: ellipsis; /* Adds ellipsis for long text */
+    display: -webkit-box; /* Multi-line ellipsis support */
+    -webkit-line-clamp: 3; /* Limit text to 3 lines */
+    -webkit-box-orient: vertical; /* Needed for ellipsis */
+}
+
+/* Ensure 2 cards are displayed per row and centered */
+@media (min-width: 768px) {
+    .card-container {
+        max-width: 40rem; /* Ensures that only two cards appear side by side */
+    }
+
+    .card {
+        flex: 1 0 48%; /* This allows two cards per row */
+    }
+}
+

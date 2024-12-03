@@ -1,6 +1,9 @@
 * {
     font-family: Arial, serif;
 }
+body{
+    overflow: scroll;
+}
 
 .filtersDropdown, .filtersDropdown:hover, .filtersDropdown:focus, .filtersDropdown:active {
     background-color: lightblue;
