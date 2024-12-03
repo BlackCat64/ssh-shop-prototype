@@ -262,30 +262,31 @@ const SearchResults = () => {
 const ViewProduct = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-    const id = queryParams.get('id') || '';
+    const id: number = parseInt(queryParams.get('id') || '', 10);
+
+    if (isNaN(id))
+        return (
+            <div className="productView">
+                <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
+                <p style={{margin: '10px'}}><strong>Invalid Product ID</strong></p>
+            </div>
+        );
+
+    const product = productsDB.find(p => p.id == id);
+    if (!product)
+        return (
+            <div className="productView">
+                <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
+                <p style={{margin: '10px'}}>Product with ID <strong>{id}</strong> Not Found</p>
+            </div>
+        );
+
 
     return (
     <div className="productView">
         <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
         <p style={{margin: '10px'}}>Product ID: <strong>{id}</strong></p>
-        <ImageCarousel images={[
-            {
-                src: "/Images/Table.jpg",
-                alt: "Test 1"
-            },
-            {
-                src: "/Images/Cloud.jpg",
-                alt: "Test 2"
-            },
-            {
-                src: "/Images/CameraFillerPhoto.jpg",
-                alt: "Test 3"
-            },
-            {
-                src: "/Images/Cloud.jpg",
-                alt: "Test 4"
-            }
-        ]}/>
+        <ImageCarousel images={product.images}/>
     </div>
     );
 };
