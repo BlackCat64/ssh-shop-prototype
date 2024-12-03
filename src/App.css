@@ -11,8 +11,6 @@
 }
 
 .navbar .accountPicture {
-    width: 40px;
-    height: 40px;
     border: 2px dimgray solid;
     border-radius: 20px;
 }

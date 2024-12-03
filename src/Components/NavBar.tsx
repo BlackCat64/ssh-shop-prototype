@@ -36,16 +36,15 @@ function NavBar({barName, barNameLink} : Props) {
                         </button>
                     </form>
 
-                    <div className="ms-auto">
+
+                    <div className="d-flex align-items-center ms-auto">
                         <Link to="/shop/settings" className="nav-link">
                             <img className="accountPicture"
                                 src="/Images/blank-profile-picture.jpg"
                                 alt="Account Settings"
+                                style={{ width: '40px', height: '40px', marginRight: '10px' }}
                             />
                         </Link>
-                    </div>
-
-                    <div className="ms-auto">
                         <Link to="/shop/checkout" className="nav-link">
                             <img
                                 src="/Images/cart-icon.png"
