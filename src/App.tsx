@@ -212,28 +212,28 @@ const SearchResults = () => {
 
 const ViewProduct = () => (
     <div>
-
+        <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
     </div>
 );
 
 //just displays items added to basket, and price(?)
 const Basket = () => (
     <div>
-
+        <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
     </div>
 );
 
 //pretend to get user information and display price
 const Checkout = () => (
     <div>
-
+        <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
     </div>
 );
 
 // SSH Shop account page - This contains order history, help+contact options, and a link to the main SSH Account page
 const Settings = () => (
     <div>
-
+        <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
     </div>
 );
 export default App;
