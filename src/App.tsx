@@ -11,6 +11,13 @@ import ProductDisplay from './Components/ProductDisplay';
 import TextBox from "./Components/TextBox";
 import TextHeader from "./Components/TextHeader";
 
+var itemTotal : number;
+function setItemTotal() {
+    itemTotal = 400;
+}
+function getItemsTotal(){
+    return itemTotal;
+}
 //Basically main, used only to route pages
 function App() {
   return (
@@ -147,11 +154,6 @@ const Checkout = () => {
                         <label> Same As Billing Address </label>
                     </div>
                     <br />
-                    <button> <h5 style={{fontWeight: "bold"}}>Continue</h5> </button>
-                    <br />
-                    </>
-                    : null}
-                    <br />
                     {!sameBillingAddress ? (
                         <form>
                             <TextHeader text="Shipping Address" />
@@ -162,9 +164,33 @@ const Checkout = () => {
                             <TextBox text="Town/City:" />
                             <TextBox text="Postal Code:" />
                             <TextBox text="Email:" />
+                            <br/>
                         </form>
                     ) : null}
+                        <button style={{background: "grey"}} onClick={() => handleNextStage()}> <h5 style={{fontWeight: "bold"}}>continue</h5> </button>
+                        <br/>
+                     </>
+                    : null}
+                    <br/>
+                    <TextHeader text="Payment Method"/>
+                    {checkoutStage === 2 ?
+                        <>
+                        <div style={{ display: "flex", alignItems: "flex-start", gap: "20px", maxWidth: "40%" }}>
+                            {/* Left Column: Card Number and Date Picker */}
+                            <div style={{ flex: "2", display: "flex", flexDirection: "column", gap: "10px" }}>
+                                <TextBox text="Card Number:" textBoxWidth="200px" />
+                                <input type="date" style={{width: "50%", padding: "5px", boxSizing: "border-box",}}/>
+                            </div>
+                            {/* Right Column: CVV2 Number */}
+                            <div style={{ flex: "1", display: "flex", alignItems: "center" }}>
+                                <TextBox text="CVV2 Number:" textBoxWidth="1000px" />
+                            </div>
+                        </div>
+                        <p>Total amount: {getItemsTotal()}</p>
+                        </>
+                     : null}
                 </form>
+
 
                 {/* Right Side: Additional Content */}
                 <div style={{ flex: "1", maxWidth: "35%", padding: "20px" }}>

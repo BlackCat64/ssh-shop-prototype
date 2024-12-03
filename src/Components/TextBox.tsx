@@ -9,7 +9,7 @@ interface Props {
 
 function TextBox({ buttonText,isButton,text,textBoxWidth = "400px"}: Props) {
     return (
-        <div style={{ width: "100%", maxWidth: textBoxWidth }}>
+        <div style={{ width: "100%", maxWidth: textBoxWidth,}}>
             <label htmlFor="fname" style={{ display: "block", marginBottom: "8px" }}>
                 {text}
             </label>
