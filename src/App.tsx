@@ -10,6 +10,7 @@ import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
 import TextBox from "./Components/TextBox";
 
+
 //Basically main, used only to route pages
 function App() {
   return (
@@ -115,19 +116,38 @@ const Basket = () => (
 );
 
 //pretend to get user information and display price
-const Checkout = () => (
-    <div>
-        <h2>Checkout</h2>
-        <form>
-            <TextBox text="First Name:"/>
-            <TextBox text="Last Name:"/>
-            <TextBox text="Street Address:"/>
-            <TextBox/>
-            <TextBox text="First Name:" isButton={true}/>
-            <TextBox text="First Name:" isButton={true}/>
-            <TextBox text="First Name:" isButton={true}/>
+const Checkout = () => {
+    const [sameBillingAddress, setSameBillingAddress] = useState(false);
+    function handleSameAddClick() {
+        setSameBillingAddress(!sameBillingAddress); // Toggle the state
+    }
 
-        </form>
-    </div>
-);
+    return (
+        <div>
+            <h2>Checkout</h2>
+            <form style={{marginLeft: "40px"}}>
+                <TextBox text="First Name:"/>
+                <TextBox text="Last Name:"/>
+                <TextBox text="Street Address:"/>
+                <TextBox/>
+                <TextBox text="Town/City:"/>
+                <TextBox text="Postal Code:"/>
+                <TextBox text="Email:"/>
+                <input type="checkbox" onClick={() => handleSameAddClick()}/>
+                <label> Same Billing Address </label><br></br>
+                {!sameBillingAddress ?
+                    <form>
+                        <TextBox text="First Name:"/>
+                        <TextBox text="Last Name:"/>
+                        <TextBox text="Street Address:"/>
+                        <TextBox/>
+                        <TextBox text="Town/City:"/>
+                        <TextBox text="Postal Code:"/>
+                        <TextBox text="Email:"/>
+                    </form>
+                    : null}
+            </form>
+        </div>
+    );
+}
 export default App;
