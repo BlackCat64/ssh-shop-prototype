@@ -177,7 +177,8 @@ const SearchResults = ({ query } : SearchResultsProps) => {
     //     item.toLowerCase().includes(searchQuery.toLowerCase())
     // );
 
-    return (<div className={"searchResults"}>
+    return (<div className="searchResults">
+        <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
         <FilterSelect
             sortType={sortType}
             setSortType={setSortType}
