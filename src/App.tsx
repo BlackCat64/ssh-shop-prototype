@@ -15,7 +15,48 @@ import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
 import ImageCarousel from './Components/ImageCarousel';
 
- var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
+var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
+
+const productsDB = [ // a placeholder for reading from the products database, implemented using MongoDB
+    {
+        id: 100,
+        name: "Amazing product 1",
+        price: 49.99,
+        summary: "This is a truly amazing product.",
+        desc: "It comes with all the amazing things you would expect.",
+        images: [
+            {
+                src: "/Images/Table.jpg",
+                alt: "Image 1"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Image 2"
+            }
+        ]
+    },
+    {
+        id: 101,
+        name: "A cool product",
+        price: 14.50,
+        summary: "This is a very cool product.",
+        desc: "It comes with all the amazing things you would expect.",
+        images: [
+            {
+                src: "/Images/CameraFillerPhoto.jpg",
+                alt: "Image 1"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Image 2"
+            },
+            {
+                src: "/Images/Table.jpg",
+                alt: "Image 3"
+            }
+        ]
+    }
+]
 
 //Basically main, used only to route pages
 function App() {
