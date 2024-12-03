@@ -37,10 +37,19 @@ function NavBar({barName, barNameLink} : Props) {
                     </form>
 
                     <div className="ms-auto">
-                        <Link to="/checkout" className="nav-link">
+                        <Link to="/shop/settings" className="nav-link">
+                            <img className="accountPicture"
+                                src="/Images/blank-profile-picture.jpg"
+                                alt="Account Settings"
+                            />
+                        </Link>
+                    </div>
+
+                    <div className="ms-auto">
+                        <Link to="/shop/checkout" className="nav-link">
                             <img
                                 src="/Images/cart-icon.png"
-                                alt="Shopping cart"
+                                alt="Basket"
                                 style={{ width: '30px', height: '30px' }}
                             />
                         </Link>
