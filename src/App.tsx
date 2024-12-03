@@ -13,7 +13,7 @@ import { BrowserRouter as Router,
 import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
-
+import ImageCarousel from './Components/ImageCarousel';
 
  var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
 
@@ -179,6 +179,7 @@ const SearchResults = () => {
     // );
 
     return (<div className={"searchResults"}>
+        <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
         <FilterSelect
             sortType={sortType}
             setSortType={setSortType}
@@ -215,9 +216,27 @@ const ViewProduct = () => {
     const id = queryParams.get('id') || '';
 
     return (
-    <div>
+    <div className="productView">
         <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
-        <p>Product ID: <strong>{id}</strong></p>
+        <p style={{margin: '10px'}}>Product ID: <strong>{id}</strong></p>
+        <ImageCarousel images={[
+            {
+                src: "/Images/Table.jpg",
+                alt: "Test 1"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Test 2"
+            },
+            {
+                src: "/Images/CameraFillerPhoto.jpg",
+                alt: "Test 3"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Test 4"
+            }
+        ]}/>
     </div>
     );
 };
