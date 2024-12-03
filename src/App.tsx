@@ -23,7 +23,12 @@ const productsDB = [ // a placeholder for reading from the products database, im
         name: "Amazing product 1",
         price: 49.99,
         summary: "This is a truly amazing product.",
-        desc: "It comes with all the amazing things you would expect.",
+        desc: `
+        It comes with all the amazing things you would expect.
+        Including:
+        - feature
+        - feature 2
+        `,
         images: [
             {
                 src: "/Images/Table.jpg",
@@ -40,7 +45,10 @@ const productsDB = [ // a placeholder for reading from the products database, im
         name: "A cool product",
         price: 14.50,
         summary: "This is a very cool product.",
-        desc: "It comes with all the amazing things you would expect.",
+        desc: `
+        Enjoy your life more with this cool product.
+        You won't believe the effect!
+        `,
         images: [
             {
                 src: "/Images/CameraFillerPhoto.jpg",
@@ -234,18 +242,18 @@ const SearchResults = () => {
             <p>Sorted by: <strong>{sortType}</strong></p>
             <p>Price Range: <strong>£{minPrice} - £{maxPrice}</strong></p>
             <ProductDisplay
-                name={"Test"}
-                desc={"A very cool product"}
-                price={"£14.99"}
-                img={"https://media.discordapp.net/attachments/993444254447849523/1119610408504918026/853891953372168223.gif?ex=6747beb2&is=67466d32&hm=e9bdb151143b83d1d5822569cd28d89a4ee1286591c1d7fd38e65fc247b6f700&"}
-                id={"69"}
+                name="Test"
+                summary="A very cool product"
+                price="£14.99"
+                img="https://media.discordapp.net/attachments/993444254447849523/1119610408504918026/853891953372168223.gif?ex=6747beb2&is=67466d32&hm=e9bdb151143b83d1d5822569cd28d89a4ee1286591c1d7fd38e65fc247b6f700&"
+                id="69"
             />
             <ProductDisplay
-                name={"Test 2"}
-                desc={"Another very cool product"}
-                price={"£16.99"}
-                img={"https://cdn.discordapp.com/attachments/1246915842340556921/1311012156682272918/image.png?ex=6747f777&is=6746a5f7&hm=55f3ba8f0dd4383bb6ad03ede1d0df06dac09783e65ed606a37aa165d1b819c2&"}
-                id={"420"}
+                name="Test 2"
+                summary="Another very cool product"
+                price="£16.99"
+                img="https://cdn.discordapp.com/attachments/1246915842340556921/1311012156682272918/image.png?ex=6747f777&is=6746a5f7&hm=55f3ba8f0dd4383bb6ad03ede1d0df06dac09783e65ed606a37aa165d1b819c2&"
+                id="420"
             />
         </div>
     </div>);
