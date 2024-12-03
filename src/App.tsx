@@ -29,6 +29,7 @@ function App() {
             <Route path="/shop/results" element={<SearchResults query={"null"}/>}/>
             <Route path="/shop/basket" element={<Basket />}/>
             <Route path="/shop/checkout" element={<Checkout />}/>
+            <Route path="/shop/settings" element={<Settings />}/>
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </div>
@@ -217,6 +218,13 @@ const Basket = () => (
 
 //pretend to get user information and display price
 const Checkout = () => (
+    <div>
+
+    </div>
+);
+
+// SSH Shop account page - This contains order history, help+contact options, and a link to the main SSH Account page
+const Settings = () => (
     <div>
 
     </div>
