@@ -27,7 +27,7 @@ function App() {
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/shop" element={<ShopHome/>}/>
             <Route path="/shop/results" element={<SearchResults query={"null"}/>}/>
-              <Route path="/shop/product" element={<ViewProduct />}/>
+            <Route path="/shop/product" element={<ViewProduct />}/>
             <Route path="/shop/basket" element={<Basket />}/>
             <Route path="/shop/checkout" element={<Checkout />}/>
             <Route path="/shop/settings" element={<Settings />}/>
