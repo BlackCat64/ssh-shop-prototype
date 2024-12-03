@@ -7,7 +7,8 @@ import Item from './Components/Item'
 import { BrowserRouter as Router,
   Route,
   Routes,
-  Link} from "react-router-dom";
+  Link,
+  useLocation} from "react-router-dom";
 
 import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
@@ -26,9 +27,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/shop" element={<ShopHome/>}/>
-            <Route path="/shop/results" element={<SearchResults query={"null"}/>}/>
+            <Route path="/shop/results" element={<SearchResults/>}/>
+            <Route path="/shop/product" element={<ViewProduct />}/>
             <Route path="/shop/basket" element={<Basket />}/>
             <Route path="/shop/checkout" element={<Checkout />}/>
+            <Route path="/shop/settings" element={<Settings />}/>
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </div>
@@ -160,17 +163,15 @@ const ShopHome = () => (
     </div>
 );
 
-interface SearchResultsProps {
-    query: string;
-}
-
 //variable page that changes based on searches
-
-const SearchResults = ({ query } : SearchResultsProps) => {
+const SearchResults = () => {
     const [sortType, setSortType] = useState<string>("alphabetical"); // default to sort by alphabetical order
     const [minPrice, setMinPrice] = useState<number>(0);
     const [maxPrice, setMaxPrice] = useState<number>(500);
 
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const query = queryParams.get('query') || '';
 
     // use this code for searching in the list of items, when we have it
     // const results = mockData.filter(item =>
@@ -209,6 +210,12 @@ const SearchResults = ({ query } : SearchResultsProps) => {
     </div>);
 };
 
+const ViewProduct = () => (
+    <div>
+
+    </div>
+);
+
 //just displays items added to basket, and price(?)
 const Basket = () => (
     <div>
@@ -218,6 +225,13 @@ const Basket = () => (
 
 //pretend to get user information and display price
 const Checkout = () => (
+    <div>
+
+    </div>
+);
+
+// SSH Shop account page - This contains order history, help+contact options, and a link to the main SSH Account page
+const Settings = () => (
     <div>
 
     </div>
