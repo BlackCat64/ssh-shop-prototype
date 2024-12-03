@@ -131,6 +131,7 @@ const Checkout = () => {
     const [checkoutStage, setCheckoutStage] = useState(1)
     function handleNextStage(){
         setCheckoutStage(checkoutStage + 1);
+        setItemTotal() //delete this part later, just here for testing reasons
     }
     return (
         <div>
@@ -140,7 +141,8 @@ const Checkout = () => {
                 <form style={{ marginLeft: "40px", flex: "1", maxWidth: "65%" }}>
                     <TextHeader text="Billing Address" />
                     {checkoutStage === 1 ?
-                    <>
+
+                    <> {/*fragment here so that I can make section conditional */}
                     <TextBox text="First Name:" />
                     <TextBox text="Last Name:" />
                     <TextBox text="Street Address:" />
@@ -149,11 +151,16 @@ const Checkout = () => {
                     <TextBox text="Postal Code:" />
                     <TextBox text="Email:" />
                     <br />
+
+                    {/*Button which can enable and disable shipping address html */}
+
                     <div style={{outline: "2px solid lightblue", border: "2px solid lightblue", width: "200px", height: "27px", borderRadius: "4px", background: "aliceblue",}}>
                         <input type="checkbox" onClick={() => handleSameAddClick()} />
                         <label> Same As Billing Address </label>
                     </div>
+
                     <br />
+
                     {!sameBillingAddress ? (
                         <form>
                             <TextHeader text="Shipping Address" />
@@ -166,10 +173,13 @@ const Checkout = () => {
                             <TextBox text="Email:" />
                             <br/>
                         </form>
+
                     ) : null}
+
                         <button style={{background: "grey"}} onClick={() => handleNextStage()}> <h5 style={{fontWeight: "bold"}}>continue</h5> </button>
                         <br/>
                      </>
+
                     : null}
                     <br/>
                     <TextHeader text="Payment Method"/>
@@ -186,7 +196,9 @@ const Checkout = () => {
                                 <TextBox text="CVV2 Number:" textBoxWidth="1000px" />
                             </div>
                         </div>
-                        <p>Total amount: {getItemsTotal()}</p>
+                            <p style={{fontWeight : "bold", fontSize: "15px"}}>Total amount: £{getItemsTotal()}</p>
+                            <p style={{fontWeight : "bold", fontStyle: "italic", fontSize: "10px"}}>Estimated Delivery Time 3-5 Working Days</p>
+                            <button style={{background: "grey"}} onClick={() => handleNextStage()}> <h5 style={{fontWeight: "bold"}}>continue</h5> </button>
                         </>
                      : null}
                 </form>
