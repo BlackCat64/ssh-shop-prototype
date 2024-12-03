@@ -268,7 +268,7 @@ const ViewProduct = () => {
         return (
             <div className="productView">
                 <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
-                <p style={{margin: '10px'}}><strong>Invalid Product ID</strong></p>
+                <p><strong>Invalid Product ID</strong></p>
             </div>
         );
 
@@ -277,7 +277,7 @@ const ViewProduct = () => {
         return (
             <div className="productView">
                 <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
-                <p style={{margin: '10px'}}>Product with ID <strong>{id}</strong> Not Found</p>
+                <p>Product Not Found</p>
             </div>
         );
 
@@ -285,8 +285,11 @@ const ViewProduct = () => {
     return (
     <div className="productView">
         <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
-        <p style={{margin: '10px'}}>Product ID: <strong>{id}</strong></p>
         <ImageCarousel images={product.images}/>
+        <div className="productDetails">
+            <p className="productName">{product.name}</p>
+            <p className="productDesc">{product.desc}</p>
+        </div>
     </div>
     );
 };
