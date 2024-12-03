@@ -9,7 +9,7 @@ import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
 import TextBox from "./Components/TextBox";
-
+import TextHeader from "./Components/TextHeader";
 
 //Basically main, used only to route pages
 function App() {
@@ -121,32 +121,57 @@ const Checkout = () => {
     function handleSameAddClick() {
         setSameBillingAddress(!sameBillingAddress); // Toggle the state
     }
-
+    const [checkoutStage, setCheckoutStage] = useState(1)
+    function handleNextStage(){
+        setCheckoutStage(checkoutStage + 1);
+    }
     return (
         <div>
-            <h2>Checkout</h2>
-            <form style={{marginLeft: "40px"}}>
-                <TextBox text="First Name:"/>
-                <TextBox text="Last Name:"/>
-                <TextBox text="Street Address:"/>
-                <TextBox/>
-                <TextBox text="Town/City:"/>
-                <TextBox text="Postal Code:"/>
-                <TextBox text="Email:"/>
-                <input type="checkbox" onClick={() => handleSameAddClick()}/>
-                <label> Same Billing Address </label><br></br>
-                {!sameBillingAddress ?
-                    <form>
-                        <TextBox text="First Name:"/>
-                        <TextBox text="Last Name:"/>
-                        <TextBox text="Street Address:"/>
-                        <TextBox/>
-                        <TextBox text="Town/City:"/>
-                        <TextBox text="Postal Code:"/>
-                        <TextBox text="Email:"/>
-                    </form>
+            <h2 style={{paddingLeft: "60px"}}>Checkout</h2>
+            <div style={{ display: "flex", justifyContent: "space-between", padding: "20px" }}>
+                {/* Left Side: Form */}
+                <form style={{ marginLeft: "40px", flex: "1", maxWidth: "65%" }}>
+                    <TextHeader text="Billing Address" />
+                    {checkoutStage === 1 ?
+                    <>
+                    <TextBox text="First Name:" />
+                    <TextBox text="Last Name:" />
+                    <TextBox text="Street Address:" />
+                    <TextBox />
+                    <TextBox text="Town/City:" />
+                    <TextBox text="Postal Code:" />
+                    <TextBox text="Email:" />
+                    <br />
+                    <div style={{outline: "2px solid lightblue", border: "2px solid lightblue", width: "200px", height: "27px", borderRadius: "4px", background: "aliceblue",}}>
+                        <input type="checkbox" onClick={() => handleSameAddClick()} />
+                        <label> Same As Billing Address </label>
+                    </div>
+                    <br />
+                    <button> <h5 style={{fontWeight: "bold"}}>Continue</h5> </button>
+                    <br />
+                    </>
                     : null}
-            </form>
+                    <br />
+                    {!sameBillingAddress ? (
+                        <form>
+                            <TextHeader text="Shipping Address" />
+                            <TextBox text="First Name:" />
+                            <TextBox text="Last Name:" />
+                            <TextBox text="Street Address:" />
+                            <TextBox />
+                            <TextBox text="Town/City:" />
+                            <TextBox text="Postal Code:" />
+                            <TextBox text="Email:" />
+                        </form>
+                    ) : null}
+                </form>
+
+                {/* Right Side: Additional Content */}
+                <div style={{ flex: "1", maxWidth: "35%", padding: "20px" }}>
+                    <h2>Right Side Content</h2>
+                    <p>This is where you can add content on the right side of the page.</p>
+                </div>
+            </div>
         </div>
     );
 }
