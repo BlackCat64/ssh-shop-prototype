@@ -209,11 +209,18 @@ const SearchResults = () => {
     </div>);
 };
 
-const ViewProduct = () => (
+const ViewProduct = () => {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const id = queryParams.get('id') || '';
+
+    return (
     <div>
         <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
+        <p>Product ID: <strong>{id}</strong></p>
     </div>
-);
+    );
+};
 
 //just displays items added to basket, and price(?)
 const Basket = () => (
