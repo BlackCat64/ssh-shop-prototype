@@ -45,7 +45,7 @@ function NavBar({barName, barNameLink} : Props) {
                                 style={{ width: '40px', height: '40px', marginRight: '10px' }}
                             />
                         </Link>
-                        <Link to="/shop/checkout" className="nav-link">
+                        <Link to="/shop/basket" className="nav-link">
                             <img
                                 src="/Images/cart-icon.png"
                                 alt="Basket"
