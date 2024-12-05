@@ -2,3 +2,14 @@
     margin-left: 33%;
     width: 33%;
 }
+
+.productView .productDetails {
+    margin-left: 33%;
+}
+.productView .productDetails .productName {
+    font-weight: bold;
+    font-size: xx-large;
+}
+.productView .productDetails .productDesc {
+    white-space: pre-wrap;
+}

@@ -27,8 +27,7 @@ const productsDB = [ // a placeholder for reading from the products database, im
         name: "Amazing product 1",
         price: 49.99,
         summary: "This is a truly amazing product.",
-        desc: `
-        It comes with all the amazing things you would expect.
+        desc: `It comes with all the amazing things you would expect.
         Including:
         - feature
         - feature 2
@@ -49,8 +48,7 @@ const productsDB = [ // a placeholder for reading from the products database, im
         name: "A cool product",
         price: 14.50,
         summary: "This is a very cool product.",
-        desc: `
-        Enjoy your life more with this cool product.
+        desc: `Enjoy your life more with this cool product.
         You won't believe the effect!
         
         Specs:
@@ -297,7 +295,8 @@ const ViewProduct = () => {
         <ImageCarousel images={product.images}/>
         <div className="productDetails">
             <p className="productName">{product.name}</p>
-            <p className="productDesc">{product.desc}</p>
+            <p style={{fontWeight: 'bold'}}>Item Details:</p>
+            <p className="productDesc">{product.desc.split('\n').map(line => line.trim()).join('\n')}</p>
         </div>
     </div>
     );

@@ -15,7 +15,7 @@ function ImageCarousel({ images }: Props) {
             id="imgCarousel"
             className="carousel slide"
             data-bs-ride="carousel"
-            style={{ height: "400px" }}
+            style={{ height: "300px" }}
         >
             {/* Wrapper for slides */}
             <div
