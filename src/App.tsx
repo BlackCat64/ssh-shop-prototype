@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import './App.css';
 import './ProductView.css';
-import NavBar from './Components/NavBar'
-import  CarouselAP from './Components/CarouselAP'
-import CardsHolder from './Components/CardsHolder'
-import Item from './Components/Item'
+import './SearchResults.css';
+
+import NavBar from './Components/NavBar';
+import  CarouselAP from './Components/CarouselAP';
+import CardsHolder from './Components/CardsHolder';
+import Item from './Components/Item';
+
 import { BrowserRouter as Router,
   Route,
   Routes,
