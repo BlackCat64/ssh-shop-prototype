@@ -21,57 +21,216 @@ import ImageCarousel from './Components/ImageCarousel';
 
 var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
 
-const productsDB = [ // a placeholder for reading from the products database, implemented using MongoDB
+const productsDB = [
     {
-        id: 100,
-        name: "Amazing product 1",
+        id: 201,
+        name: "Ergonomic Keyboard",
         price: 49.99,
-        summary: "This is a truly amazing product.",
-        desc: `It comes with all the amazing things you would expect.
-        Including:
-        - feature
-        - feature 2
+        summary: "A comfortable ergonomic keyboard for long hours of typing.",
+        desc: `This ergonomic keyboard is designed to reduce strain on your wrists.
+        It features:
+        - Split key design
+        - Soft-touch keys
+        - Durable build with adjustable tilt
         `,
         images: [
             {
-                src: "/Images/Table.jpg",
-                alt: "Image 1"
-            },
-            {
                 src: "/Images/Cloud.jpg",
-                alt: "Image 2"
+                alt: "Ergonomic Keyboard Image #1"
             }
         ]
     },
     {
-        id: 101,
-        name: "A cool product",
-        price: 14.50,
-        summary: "This is a very cool product.",
-        desc: `Enjoy your life more with this cool product.
-        You won't believe the effect!
-        
-        Specs:
-        - 100mm
-        - W: 32cm x L: 24cm x H: 144cm
-        - No batteries included
+        id: 202,
+        name: "Wireless Mouse",
+        price: 24.99,
+        summary: "A sleek wireless mouse with customizable buttons.",
+        desc: `This wireless mouse offers precision and control.
+        Features include:
+        - Adjustable DPI
+        - Long battery life (up to 6 months)
+        - Ergonomic grip for comfort during extended use
         `,
         images: [
             {
-                src: "/Images/CameraFillerPhoto.jpg",
-                alt: "Image 1"
+                src: "/Images/Cloud.jpg",
+                alt: "Wireless Mouse Image #1"
             },
             {
                 src: "/Images/Cloud.jpg",
-                alt: "Image 2"
+                alt: "Wireless Mouse Image #2"
+            }
+        ]
+    },
+    {
+        id: 203,
+        name: "RGB Gaming Headset",
+        price: 79.99,
+        summary: "A vibrant gaming headset with surround sound.",
+        desc: `Take your gaming to the next level with immersive sound.
+        Specifications:
+        - Virtual 7.1 surround sound
+        - Noise-canceling microphone
+        - Comfortable ear cups with RGB lighting
+        `,
+        images: [
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "RGB Gaming Headset Image #1"
             },
             {
-                src: "/Images/Table.jpg",
-                alt: "Image 3"
+                src: "/Images/Cloud.jpg",
+                alt: "RGB Gaming Headset Image #2"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "RGB Gaming Headset Image #3"
+            }
+        ]
+    },
+    {
+        id: 204,
+        name: "4K Webcam",
+        price: 89.99,
+        summary: "A high-quality webcam for crystal-clear video calls.",
+        desc: `Enhance your online presence with this 4K webcam.
+        Features include:
+        - Auto-focus technology
+        - Built-in noise-reducing microphone
+        - Adjustable field of view
+        `,
+        images: [
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "4K Webcam Image #1"
+            }
+        ]
+    },
+    {
+        id: 205,
+        name: "Mechanical Keyboard",
+        price: 149.99,
+        summary: "A durable mechanical keyboard with RGB lighting.",
+        desc: `This mechanical keyboard is built for speed and precision.
+        Key features:
+        - Tactile key switches
+        - Fully customizable RGB lighting
+        - Detachable wrist rest for ergonomic typing
+        `,
+        images: [
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Mechanical Keyboard Image #1"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Mechanical Keyboard Image #2"
+            }
+        ]
+    },
+    {
+        id: 206,
+        name: "USB-C Hub",
+        price: 39.99,
+        summary: "A multi-port USB-C hub for all your connectivity needs.",
+        desc: `Connect multiple devices with this versatile USB-C hub.
+        Ports include:
+        - 3x USB-A
+        - 1x HDMI (4K)
+        - 1x SD card slot and microSD card slot
+        `,
+        images: [
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "USB-C Hub Image #1"
+            }
+        ]
+    },
+    {
+        id: 207,
+        name: "Portable SSD",
+        price: 99.99,
+        summary: "A fast and durable portable SSD with 1TB capacity.",
+        desc: `Store your data securely with this portable SSD.
+        Specifications:
+        - 1TB storage capacity
+        - Shock-resistant design
+        - USB 3.2 Gen 2 interface
+        `,
+        images: [
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Portable SSD Image #1"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Portable SSD Image #2"
+            }
+        ]
+    },
+    {
+        id: 208,
+        name: "Dual Monitor Stand",
+        price: 129.99,
+        summary: "A sturdy dual monitor stand with adjustable arms.",
+        desc: `Maximize your workspace with this dual monitor stand.
+        Features:
+        - Fully adjustable arms
+        - Supports up to 32-inch monitors
+        - Integrated cable management
+        `,
+        images: [
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Dual Monitor Stand Image #1"
+            }
+        ]
+    },
+    {
+        id: 209,
+        name: "Gaming Chair",
+        price: 249.99,
+        summary: "An ergonomic gaming chair with lumbar support.",
+        desc: `Stay comfortable during long gaming sessions.
+        Features:
+        - Adjustable lumbar and neck support
+        - Reclining function up to 180°
+        - High-density foam padding
+        `,
+        images: [
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Gaming Chair Image #1"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Gaming Chair Image #2"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Gaming Chair Image #3"
+            }
+        ]
+    },
+    {
+        id: 210,
+        name: "Bluetooth Speaker",
+        price: 59.99,
+        summary: "A compact Bluetooth speaker with powerful sound.",
+        desc: `Bring your music anywhere with this Bluetooth speaker.
+        Key features:
+        - Up to 12 hours of battery life
+        - Water-resistant (IPX5)
+        - Compact and lightweight design
+        `,
+        images: [
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Bluetooth Speaker Image #1"
             }
         ]
     }
-]
+];
 
 //Basically main, used only to route pages
 function App() {
