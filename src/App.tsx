@@ -26,7 +26,6 @@ function App() {
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </div>
-
       </Router>
   );
 }
@@ -57,11 +56,6 @@ const Dashboard = () => (
                 text={"Add or edit devices associated with your SSH account"}
                 link={"*"}
             />
-            {/*<Card*/}
-            {/*    title={"Ssh Shop"}*/}
-            {/*    text={"Lorem Ipsum"}*/}
-            {/*    link={"*"}*/}
-            {/*/>*/}
     </div>
 </div>
 );
