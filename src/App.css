@@ -9,6 +9,9 @@
     padding-top: 56px; /* Adjust based on the navbar height */
     font-family: Arial, serif;
 }
+body{
+    overflow: scroll;
+}
 
 .navbar .accountPicture {
     border: 2px dimgray solid;

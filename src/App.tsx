@@ -11,9 +11,8 @@ import Item from './Components/Item';
 import { BrowserRouter as Router,
   Route,
   Routes,
-  Link,
-  useLocation} from "react-router-dom";
-
+  Link} from "react-router-dom";
+import Card from "./Components/Card";
 import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
@@ -91,20 +90,36 @@ function App() {
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </div>
-
       </Router>
   );
 }
 
 //Dashboard function is like homepage, just use to have button to Shop
 const Dashboard = () => (
-    <div>
-        <ItemCard
-            title={"Ssh Shop"}
-            text={"Lorem Ipsum"}
-            item={<Item link="/shop"/>}
-        />
+    <div className="dashboard">
+        <div className="card-container">
+            <Card
+                title={"Ssh Shop"}
+                text={"Purchase our state of the art SHH products and general student essentials here!"}
+                link={"/shop"}
+            />
+            <Card
+                title={"Accounts"}
+                text={"Manage your account, edit deliveries or change your subscription."}
+                link={"*"}
+            />
+            <Card
+                title={"Contact Us"}
+                text={"Contact us here for all general queries"}
+                link={"*"}
+            />
+            <Card
+                title={"Manage devices"}
+                text={"Add or edit devices associated with your SSH account"}
+                link={"*"}
+            />
     </div>
+</div>
 );
 
 //Main page for us, will be adding items search bar etc
