@@ -422,9 +422,6 @@ const SearchResults = () => {
             setMaxPrice={setMaxPrice}
         />
         <div className={"resultsDisplay"}>
-            <p>Showing results for: <strong>{query}</strong></p>
-            <p>Sorted by: <strong>{sortType}</strong></p>
-            <p>Price Range: <strong>£{minPrice} - £{maxPrice}</strong></p>
             <div className="productList">
                 {results.map(product => ( // display search results
                     <ProductDisplay
