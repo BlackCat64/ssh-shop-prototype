@@ -4,15 +4,15 @@ interface ProductProps{
     name: string; // name of the product
     summary: string; // a short description to display about the product
     price: string; // a string representation of the product's price
-    img: string; // source URL for an image of the product
-    id: string; // the product's ID, which is used in its page's link as a query parameter
+    img: { src: string, alt: string }; // source URL for an image of the product
+    id: number; // the product's ID, which is used in its page's link as a query parameter
 }
 function ProductDisplay({name, summary, price, img, id}:ProductProps) {
     return (
         <div className="card productDisplay">
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={img} alt={name} className="img-fluid rounded-start" />
+                    <img src={img.src} alt={img.alt} className="img-fluid rounded-start" />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
