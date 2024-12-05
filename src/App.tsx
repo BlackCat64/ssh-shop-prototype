@@ -17,7 +17,7 @@ import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
 
 
- var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
+var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
 
 //Basically main, used only to route pages
 function App() {
