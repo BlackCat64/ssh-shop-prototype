@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import './App.css';
+import './ProductView.css';
 import './SearchResults.css';
 
 import NavBar from './Components/NavBar';
 import  CarouselAP from './Components/CarouselAP';
 import CardsHolder from './Components/CardsHolder';
 import Item from './Components/Item';
+
 import { BrowserRouter as Router,
   Route,
   Routes,
@@ -15,9 +17,61 @@ import { BrowserRouter as Router,
 import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
 import ProductDisplay from './Components/ProductDisplay';
-
+import ImageCarousel from './Components/ImageCarousel';
 
 var test = <Item imgSrc="/Images/CameraFillerPhoto.jpg" link="/shop/checkout" text="Test Item"/>
+
+const productsDB = [ // a placeholder for reading from the products database, implemented using MongoDB
+    {
+        id: 100,
+        name: "Amazing product 1",
+        price: 49.99,
+        summary: "This is a truly amazing product.",
+        desc: `It comes with all the amazing things you would expect.
+        Including:
+        - feature
+        - feature 2
+        `,
+        images: [
+            {
+                src: "/Images/Table.jpg",
+                alt: "Image 1"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Image 2"
+            }
+        ]
+    },
+    {
+        id: 101,
+        name: "A cool product",
+        price: 14.50,
+        summary: "This is a very cool product.",
+        desc: `Enjoy your life more with this cool product.
+        You won't believe the effect!
+        
+        Specs:
+        - 100mm
+        - W: 32cm x L: 24cm x H: 144cm
+        - No batteries included
+        `,
+        images: [
+            {
+                src: "/Images/CameraFillerPhoto.jpg",
+                alt: "Image 1"
+            },
+            {
+                src: "/Images/Cloud.jpg",
+                alt: "Image 2"
+            },
+            {
+                src: "/Images/Table.jpg",
+                alt: "Image 3"
+            }
+        ]
+    }
+]
 
 //Basically main, used only to route pages
 function App() {
@@ -198,7 +252,7 @@ const SearchResults = () => {
         }
     });
 
-    return (<div className={"searchResults"}>
+    return (<div className="searchResults">
         <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
         <FilterSelect
             sortType={sortType}
