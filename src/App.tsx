@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import './ProductView.css';
 import NavBar from './Components/NavBar'
 import  CarouselAP from './Components/CarouselAP'
 import CardsHolder from './Components/CardsHolder'
@@ -48,6 +49,11 @@ const productsDB = [ // a placeholder for reading from the products database, im
         desc: `
         Enjoy your life more with this cool product.
         You won't believe the effect!
+        
+        Specs:
+        - 100mm
+        - W: 32cm x L: 24cm x H: 144cm
+        - No batteries included
         `,
         images: [
             {
