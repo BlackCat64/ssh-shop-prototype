@@ -11,7 +11,8 @@ import Item from './Components/Item';
 import { BrowserRouter as Router,
   Route,
   Routes,
-  Link} from "react-router-dom";
+  Link,
+  useLocation} from "react-router-dom";
 import Card from "./Components/Card";
 import ItemCard from "./Components/ItemCard";
 import FilterSelect from './Components/FilterSelect';
