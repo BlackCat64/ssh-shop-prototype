@@ -294,7 +294,11 @@ const ViewProduct = () => {
         <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
         <ImageCarousel images={product.images}/>
         <div className="productDetails">
-            <p className="productName">{product.name}</p>
+            <div className="productHeader">
+                <p className="productName">{product.name}</p>
+                <button className="btn btn-primary addToBasket">Add to Basket</button>
+            </div>
+
             <p className="productPrice">{displayPrice(product.price, "£")}</p>
             <p style={{fontWeight: 'bold'}}>Item Details:</p>
             <p className="productDesc">{product.desc.split('\n').map(line => line.trim()).join('\n')}</p>

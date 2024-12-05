@@ -1,20 +1,34 @@
 .productView #imgCarousel {
     margin-left: 33%;
+    margin-top: 10px;
     width: 33%;
 }
 
 .productView .productDetails {
     margin-left: 33%;
 }
-.productView .productDetails .productName {
+
+.productHeader {
+    display: flex;
+    justify-content: space-between; /* Spread items across the row */
+    align-items: center; /* Center items vertically */
+    margin-top: 10px;
+}
+
+.addToBasket {
+    white-space: nowrap;
+    margin-right: 50%;
+}
+
+.productName {
     font-weight: bold;
     font-size: xx-large;
     margin: 0;
 }
-.productView .productDetails .productPrice {
+.productPrice {
     font-size: x-large;
 }
 
-.productView .productDetails .productDesc {
+.productDesc {
     white-space: pre-wrap;
 }
