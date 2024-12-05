@@ -43,7 +43,7 @@ const FilterSelect: React.FC<FilterSelectProps> = ({
                 Filters
             </button>
 
-            <form className={`filtersMenu dropdown-menu p-4 ${dropdownOpen ? "show" : ""}`}>
+            <form className={`filtersMenu dropdown-menu dropdown-menu-start p-4 ${dropdownOpen ? "show" : ""}`}>
                 <div className="filterSelect">
                     <table className="filterOptionsLayout">
                         <th>
@@ -58,7 +58,6 @@ const FilterSelect: React.FC<FilterSelectProps> = ({
                             <SortSelector sortType={sortType} setSortType={setSortType} />
                         </th>
                     </table>
-                    <button className="btn btn-primary" type="submit" onClick={handleSearchClick}>Search</button>
                 </div>
             </form>
         </div>

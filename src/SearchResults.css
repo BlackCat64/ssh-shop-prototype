@@ -20,7 +20,7 @@
 }
 
 .searchResults .filtersDropdown.open {
-    height: 240px;
+    height: 200px;
 }
 
 .searchResults .filtersMenu {
@@ -55,6 +55,7 @@
 .searchResults .filterOptionsLayout th {
     width: 50%;
     padding: 0 20px 5px 20px;
+    height: 5px;
 }
 
 .searchResults .priceRange .priceInput {
@@ -74,4 +75,10 @@
 }
 .searchResults .productDisplay {
     width: 50%;
+}
+.noResults {
+    margin-top: 20px;
+    margin-left: 45%;
+    font-weight: bold;
+    font-size: large;
 }

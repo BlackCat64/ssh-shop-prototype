@@ -388,28 +388,51 @@ const SearchResults = () => {
     const queryParams = new URLSearchParams(location.search);
     const query = queryParams.get('query') || '';
 
-    const rawResults = productsDB.filter(item =>
-        item.name.toLowerCase().includes(query.toLowerCase())
-    );
-    // filter by price
-    const priceFilterResults = rawResults.filter(item =>
-        item.price >= minPrice && item.price <= maxPrice
-    );
-    // Sort the results based on sortType
-    const results = priceFilterResults.sort((a, b) => {
-        switch (sortType) {
-            case "alphabetical":
-                return a.name.localeCompare(b.name);
-            case "alphabetical-reverse":
-                return b.name.localeCompare(a.name);
-            case "price":
-                return a.price - b.price;
-            case "price-reverse":
-                return b.price - a.price;
-            default:
-                return 0;
-        }
-    });
+    let results;
+    if (query == '') { // searching nothing returns all products
+        results = productsDB;
+    }
+    else {
+        const rawResults = productsDB.filter(item =>
+            item.name.toLowerCase().includes(query.toLowerCase())
+        );
+        // filter by price
+        const priceFilterResults = rawResults.filter(item =>
+            item.price >= minPrice && item.price <= maxPrice
+        );
+        // Sort the results based on sortType
+        results = priceFilterResults.sort((a, b) => {
+            switch (sortType) {
+                case "alphabetical":
+                    return a.name.localeCompare(b.name);
+                case "alphabetical-reverse":
+                    return b.name.localeCompare(a.name);
+                case "price":
+                    return a.price - b.price;
+                case "price-reverse":
+                    return b.price - a.price;
+                default:
+                    return 0;
+            }
+        });
+    }
+
+    if (results.length == 0) {
+        return (
+            <div className="searchResults">
+                <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
+                <FilterSelect
+                    sortType={sortType}
+                    setSortType={setSortType}
+                    minPrice={minPrice}
+                    setMinPrice={setMinPrice}
+                    maxPrice={maxPrice}
+                    setMaxPrice={setMaxPrice}
+                />
+                <p className="noResults">No Results Found</p>
+            </div>
+        )
+    }
 
     return (<div className="searchResults">
         <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
@@ -455,7 +478,7 @@ const ViewProduct = () => {
         return (
             <div className="productView">
                 <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
-                <p>Product Not Found</p>
+                <p className="noResults">Product Not Found</p>
             </div>
         );
 
