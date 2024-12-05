@@ -9,7 +9,12 @@
 .productView .productDetails .productName {
     font-weight: bold;
     font-size: xx-large;
+    margin: 0;
 }
+.productView .productDetails .productPrice {
+    font-size: x-large;
+}
+
 .productView .productDetails .productDesc {
     white-space: pre-wrap;
 }

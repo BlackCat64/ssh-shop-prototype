@@ -295,6 +295,7 @@ const ViewProduct = () => {
         <ImageCarousel images={product.images}/>
         <div className="productDetails">
             <p className="productName">{product.name}</p>
+            <p className="productPrice">{displayPrice(product.price, "£")}</p>
             <p style={{fontWeight: 'bold'}}>Item Details:</p>
             <p className="productDesc">{product.desc.split('\n').map(line => line.trim()).join('\n')}</p>
         </div>
@@ -322,4 +323,8 @@ const Settings = () => (
         <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
     </div>
 );
+
+function displayPrice(price: number, currency: string): string {
+    return currency + price.toFixed(2);
+}
 export default App;
