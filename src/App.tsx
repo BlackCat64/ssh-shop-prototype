@@ -429,7 +429,12 @@ const SearchResults = () => {
                     maxPrice={maxPrice}
                     setMaxPrice={setMaxPrice}
                 />
-                <p className="noResults">No Results Found</p>
+                <div className="noResults">
+                    <p>No Results Found</p>
+                    <Link to="/shop" className="btn btn-primary homeButton">
+                        Back To Home
+                    </Link>
+                </div>
             </div>
         )
     }
@@ -469,7 +474,12 @@ const ViewProduct = () => {
         return (
             <div className="productView">
                 <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
-                <p><strong>Invalid Product ID</strong></p>
+                <div className="noResults">
+                    <p>Invalid Product ID</p>
+                    <Link to="/shop" className="btn btn-primary homeButton">
+                        Back To Home
+                    </Link>
+                </div>
             </div>
         );
 
@@ -478,7 +488,12 @@ const ViewProduct = () => {
         return (
             <div className="productView">
                 <NavBar barName={"SSH Shop"} barNameLink="/shop"/>
-                <p className="noResults">Product Not Found</p>
+                <div className="noResults">
+                    <p>Product Not Found</p>
+                    <Link to="/shop" className="btn btn-primary homeButton">
+                        Back To Home
+                    </Link>
+                </div>
             </div>
         );
 
