@@ -616,7 +616,7 @@ const Checkout = () => {
                             {/* Left Column: Card Number and Date Picker */}
                             <div style={{ flex: "2", display: "flex", flexDirection: "column", gap: "10px" }}>
                                 <TextBox text="Card Number:" textBoxWidth="200px" />
-                                <input type="date" style={{width: "50%", padding: "5px", boxSizing: "border-box",}}/>
+                                <input type="month" style={{width: "50%", padding: "5px", boxSizing: "border-box",}}/>
                             </div>
                             {/* Right Column: CVV2 Number */}
                             <div style={{ flex: "1", display: "flex", alignItems: "center" }}>
